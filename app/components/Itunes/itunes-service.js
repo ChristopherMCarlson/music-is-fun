@@ -1,22 +1,16 @@
+
 import Song from "../../models/Song.js";
 
-
+//DO NOT MODIFY
 class ItunesService {
 
-  //DO NOT MODIFY
   getMusicByArtist(artist) {
-    var url = 'https://itunes.apple.com/search?term=' + artist;
-    //Casts each object to 
+    var url = 'https://itunes.apple.com/search?callback=?&term=' + artist;
     // @ts-ignore
-    return $.getJSON(url).then(function (response) {
-      var songList = response.results.map(s => {
-        return new Song(s)
-      })
-      return songList;
-    })
+    return $.getJSON(url)
+      .then(res => res.results.map(s => new Song(s)))
+      .catch(err => console.log(err))
   }
-
-
 }
 
 
