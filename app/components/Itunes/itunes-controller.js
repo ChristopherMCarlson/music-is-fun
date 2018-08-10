@@ -20,10 +20,12 @@ class ItunesController {
     e.preventDefault();
     var artist = e.target.artist.value;
     //changes the button to loading while songs load
+    // @ts-ignore
     $('#get-music-button').text('LOADING....');
     itunesService.getMusicByArtist(artist).then(results => {
       drawSongs(results)
       //changes button back to GET MUSIC once songs are loaded
+      // @ts-ignore
       $('#get-music-button').text('GET MUSIC');
     })
   }
