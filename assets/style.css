@@ -1,0 +1,23 @@
+body, html {
+  height: 100%;
+}
+
+.song-card {
+  background: rgba(135, 207, 235, 0.835);
+  padding: 30px;
+  box-shadow: 1px 1px 2px #000000;
+  border-radius: 4px;
+}
+
+.parallax { 
+  background-image: url(bg1.png);
+  height: 100%; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container-full-height {
+  min-height: 75vh;
+}

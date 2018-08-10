@@ -9,23 +9,23 @@ function drawSongs(results) {
 
   for (let i = 0; i < results.length; i++) {
     if (results[i].preview.includes('video')) {
-      console.log(results[i].preview)
       continue
     } else {
       const song = results[i];
       template += `
-    <div class="col-sm-4 px-5 d-inline-block text-truncate">
-      <p>${song.artist}</p>
-      <p>${song.title}</p>
-      <p>${song.collection}</p>
-      <p>${song.price}</p>
+    <div class="col-sm-4 px-5 d-inline-block my-5">
+      <div class="song-card">
+      <p class="text-truncate">${song.artist}</p>
+      <p class="text-truncate">${song.title}</p>
+      <p class="text-truncate">${song.collection}</p>
+      <p class="text-truncate">$${song.price}</p>
       <p><img src="${song.albumArt}" alt="" class="img-fluid img-thumbnail" /></p>
       <p><audio controls><source src="${song.preview}" type="audio/mp4"></audio></p>
-    </div>
+      </div>
+      </div>
     `
     }
     document.getElementById("songs").innerHTML = template
-    console.log(results)
   }
 }
 
