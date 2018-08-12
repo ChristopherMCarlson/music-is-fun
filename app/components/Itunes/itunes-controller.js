@@ -33,6 +33,16 @@ function drawSongs(results) {
 }
 
 
+document.addEventListener('play', function (e) {
+  var play = document.getElementsByTagName('audio');
+  for (var i = 0, len = play.length; i < len; i++) {
+    if (play[i] != e.target) {
+      play[i].pause();
+    }
+  }
+}, true);
+
+
 
 //PUBLIC
 class ItunesController {
