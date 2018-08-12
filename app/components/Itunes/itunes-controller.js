@@ -10,7 +10,10 @@ function drawSongs(results) {
   for (let i = 0; i < results.length; i++) {
     if (results[i].preview.includes('video')) {
       continue
-    } else {
+    } if (results[i].price <= 0) {
+      continue
+    }
+    else {
       const song = results[i];
       template += `
     <div class="col-sm-4 px-5 d-inline-block my-5">
@@ -28,6 +31,7 @@ function drawSongs(results) {
     document.getElementById("songs").innerHTML = template
   }
 }
+
 
 
 //PUBLIC
