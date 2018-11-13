@@ -49,6 +49,7 @@ class ItunesController {
   //DO NOT MODIFY THIS METHOD
   getMusic(e) {
     e.preventDefault();
+    console.log(e)
     var artist = e.target.artist.value;
     //changes the button to loading while songs load
     // @ts-ignore
